@@ -1,0 +1,26 @@
+{
+  "name": "profile-next",
+  "version": "1.0.0",
+  "description": "Single page Profile theme for Next.js",
+  "main": "index.js",
+  "author": "Fareez Ahamed",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^9.1.6",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-feather": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^13.1.0",
+    "@types/react": "^16.9.17",
+    "tailwindcss": "^1.1.4",
+    "typescript": "^3.7.4"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "build:css": "npx tailwind build css/styles.css -o public/styles.css",
+    "start": "next start"
+  }
+}
