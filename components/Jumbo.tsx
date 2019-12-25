@@ -6,9 +6,9 @@ const Jumbo: React.FC<{}> = props => (
     style={{ backgroundImage: `url(${data.jumboImage})` }}
   >
     <div className="container flex flex-col mx-auto items-center justify-center">
-      <p className="text-6xl font-bold font-disp">{data.name}</p>
+      <p className="md:text-6xl text-4xl font-bold font-sans">{data.name}</p>
       <p
-        className="text-3xl font-disp font-light uppercase"
+        className="md:text-3xl text-xl font-sans font-light uppercase"
         style={{ letterSpacing: "0.3rem" }}
       >
         {data.title}
