@@ -7,4 +7,6 @@
 [] Education
 [] Experience
 [] Projects
+[] Portfolio
+[] Stats Counter
 [] Social Media / Contact Me
