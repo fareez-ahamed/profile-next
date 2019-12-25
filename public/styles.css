@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900&display=swap'); */
 
-@import url('https://fonts.googleapis.com/css?family=Source+Serif+Pro&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Source+Serif+Pro&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:300,400,400i|IBM+Plex+Sans:100,100i,400,400i,700,700i|IBM+Plex+Serif:400,400i&display=swap');
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -3654,11 +3656,15 @@ video {
 }
 
 .font-sans{
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.font-condensed{
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
 }
 
 .font-serif{
-  font-family: "Source Serif Pro", serif;
+  font-family: "IBM Plex Serif", serif;
 }
 
 .font-hairline{
@@ -14429,11 +14435,15 @@ video {
   }
 
   .sm\:font-sans{
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "IBM Plex Sans", sans-serif;
+  }
+
+  .sm\:font-condensed{
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
   }
 
   .sm\:font-serif{
-    font-family: "Source Serif Pro", serif;
+    font-family: "IBM Plex Serif", serif;
   }
 
   .sm\:font-hairline{
@@ -25205,11 +25215,15 @@ video {
   }
 
   .md\:font-sans{
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "IBM Plex Sans", sans-serif;
+  }
+
+  .md\:font-condensed{
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
   }
 
   .md\:font-serif{
-    font-family: "Source Serif Pro", serif;
+    font-family: "IBM Plex Serif", serif;
   }
 
   .md\:font-hairline{
@@ -35981,11 +35995,15 @@ video {
   }
 
   .lg\:font-sans{
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "IBM Plex Sans", sans-serif;
+  }
+
+  .lg\:font-condensed{
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
   }
 
   .lg\:font-serif{
-    font-family: "Source Serif Pro", serif;
+    font-family: "IBM Plex Serif", serif;
   }
 
   .lg\:font-hairline{
@@ -46757,11 +46775,15 @@ video {
   }
 
   .xl\:font-sans{
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "IBM Plex Sans", sans-serif;
+  }
+
+  .xl\:font-condensed{
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
   }
 
   .xl\:font-serif{
-    font-family: "Source Serif Pro", serif;
+    font-family: "IBM Plex Serif", serif;
   }
 
   .xl\:font-hairline{
