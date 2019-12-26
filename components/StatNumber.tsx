@@ -17,20 +17,16 @@ const StatNumber: React.FC<{
   className?: string;
   fixedPoint?: number;
 }> = props => {
-  const [i, setI] = useState(0);
-  const [active, setActive] = useState(false);
-  const delta = props.value / 10;
+  const [i, start, started] = useIncrementingNumber(props.value);
   const ref = createRef<HTMLParagraphElement>();
 
-  function increment() {
-    setI(x => {
-      return x < props.value ? x + delta : props.value;
-    });
-  }
-
   function activate() {
-    if (!active && inViewPort(ref.current.getBoundingClientRect())) {
-      setActive(true);
+    if (
+      ref.current &&
+      inViewPort(ref.current.getBoundingClientRect()) &&
+      !started
+    ) {
+      start();
       console.log("Activated");
     }
   }
@@ -40,14 +36,6 @@ const StatNumber: React.FC<{
     return () => document.removeEventListener("scroll", activate);
   });
 
-  useEffect(() => {
-    let handle = null;
-    if (active) {
-      handle = setInterval(increment, 100);
-    }
-    return () => clearInterval(handle);
-  }, [active, props]);
-
   return (
     <p className={props.className} ref={ref}>
       {i.toFixed(props.fixedPoint || 0)}
@@ -55,7 +43,7 @@ const StatNumber: React.FC<{
   );
 };
 
-function useIncrementingNumber(n: number) {
+function useIncrementingNumber(n: number): [number, () => void, boolean] {
   const [i, setI] = useState(0);
   const delta = n / 10;
 
@@ -68,10 +56,18 @@ function useIncrementingNumber(n: number) {
   }
 
   function start() {
-    handle = setInterval(increment, 100);
+    if (!handle) {
+      handle = setInterval(increment, 100);
+    }
   }
 
-  return [i, start];
+  useEffect(() => {
+    return () => {
+      if (handle) clearInterval(handle);
+    };
+  }, []);
+
+  return [i, start, i !== 0];
 }
 
 export default StatNumber;
