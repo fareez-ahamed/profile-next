@@ -1,5 +1,6 @@
 import data from "../data/data.json";
-import React from "react";
+import React, { createRef } from "react";
+import { useScreenEnter, useIncrementingNumber } from "./common";
 
 const Skills: React.FC<{}> = props => (
   <section className="bg-black text-white">
@@ -14,8 +15,8 @@ const Skills: React.FC<{}> = props => (
           gridGap: "1.50rem"
         }}
       >
-        {data.skills.map(skill => (
-          <React.Fragment>
+        {data.skills.map((skill, i) => (
+          <React.Fragment key={i}>
             <p className="text-lg font-medium text-right">{skill.name}</p>
             <SkillLevel value={skill.percentage} />
           </React.Fragment>
@@ -25,15 +26,22 @@ const Skills: React.FC<{}> = props => (
   </section>
 );
 
-const SkillLevel: React.FC<{ value: number }> = props => (
-  <div className="h-8 bg-gray-900 rounded">
-    <div
-      className="h-full bg-green-500 rounded-l"
-      style={{
-        width: props.value + "%"
-      }}
-    ></div>
-  </div>
-);
+const SkillLevel: React.FC<{ value: number }> = props => {
+  const [i, start] = useIncrementingNumber(props.value);
+  const ref = createRef<HTMLDivElement>();
+  useScreenEnter(ref, () => start());
+  return (
+    <div className="h-8 bg-gray-900 rounded" ref={ref}>
+      <div
+        className="h-full bg-green-500 rounded-l"
+        style={{
+          width: i + "%",
+          transitionProperty: "width",
+          transitionDuration: "1s"
+        }}
+      ></div>
+    </div>
+  );
+};
 
 export default Skills;
