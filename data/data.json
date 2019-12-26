@@ -22,5 +22,23 @@
             "value": 5,
             "text": "Members"
         }
+    ],
+    "skills": [
+        {
+            "name": "Java",
+            "percentage": 55
+        },
+        {
+            "name": "React.js",
+            "percentage": 65
+        },
+        {
+            "name": "Laravel",
+            "percentage": 90
+        },
+        {
+            "name": "Sprint",
+            "percentage": 80
+        }
     ]
 }

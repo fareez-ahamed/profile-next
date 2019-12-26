@@ -4,6 +4,7 @@ import data from "../data/data.json";
 import AboutMe from "../components/AboutMe";
 import StatNumber from "../components/StatNumber";
 import Statistics from "../components/Statistics";
+import Skills from "../components/Skills";
 
 const Home: React.FC<{}> = props => (
   <div>
@@ -16,6 +17,7 @@ const Home: React.FC<{}> = props => (
     <Jumbo />
     <AboutMe />
     <Statistics />
+    <Skills />
   </div>
 );
 
