@@ -12,7 +12,11 @@ function inViewPort(rect: DOMRect): boolean {
   return false;
 }
 
-const StatNumber: React.FC<{ value: number; className?: string }> = props => {
+const StatNumber: React.FC<{
+  value: number;
+  className?: string;
+  fixedPoint?: number;
+}> = props => {
   const [i, setI] = useState(0);
   const [active, setActive] = useState(false);
   const delta = props.value / 10;
@@ -20,7 +24,7 @@ const StatNumber: React.FC<{ value: number; className?: string }> = props => {
 
   function increment() {
     setI(x => {
-      return x < props.value ? Math.ceil(x + delta) : props.value;
+      return x < props.value ? x + delta : props.value;
     });
   }
 
@@ -46,9 +50,28 @@ const StatNumber: React.FC<{ value: number; className?: string }> = props => {
 
   return (
     <p className={props.className} ref={ref}>
-      {i}
+      {i.toFixed(props.fixedPoint || 0)}
     </p>
   );
 };
+
+function useIncrementingNumber(n: number) {
+  const [i, setI] = useState(0);
+  const delta = n / 10;
+
+  let handle = null;
+
+  function increment() {
+    setI(x => {
+      return x < n ? x + delta : n;
+    });
+  }
+
+  function start() {
+    handle = setInterval(increment, 100);
+  }
+
+  return [i, start];
+}
 
 export default StatNumber;
