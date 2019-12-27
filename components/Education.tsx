@@ -3,14 +3,17 @@ import React from "react";
 
 const Education: React.FC<{}> = props => (
   <section>
-    <div className="container mx-auto md:p-16 p-8">
+    <div className="container mx-auto md:p-16 p-8 flex flex-col">
       <p className="font-condensed font-bold text-4xl mb-8">Education</p>
       <div
+        className="max-w-lg"
         style={{
           display: "grid",
           gridTemplateColumns: "auto 1fr",
           gridTemplateRows: "auto",
-          gridColumnGap: "2rem"
+          gridColumnGap: "2rem",
+          justifyContent: "center",
+          alignSelf: "center"
         }}
       >
         {data.education.map((edu, i) => (
@@ -33,7 +36,7 @@ const Education: React.FC<{}> = props => (
                 <div className="border-r-2 border-dotted border-gray-500 flex-grow"></div>
               </div>
             </div>
-            <div className="flex flex-col pt-4">
+            <div className="flex flex-col pt-4 md:ml-8">
               <p className="font-sans font-semibold text-3xl">{edu.degree}</p>
               <p className="font-sans text-xl">{edu.speciality}</p>
               <p className="font-sans text-gray-700 text-lg">{edu.institute}</p>
