@@ -5,6 +5,7 @@ import AboutMe from "../components/AboutMe";
 import StatNumber from "../components/StatNumber";
 import Statistics from "../components/Statistics";
 import Skills from "../components/Skills";
+import Education from "../components/Education";
 
 const Home: React.FC<{}> = props => (
   <div>
@@ -18,6 +19,7 @@ const Home: React.FC<{}> = props => (
     <AboutMe />
     <Statistics />
     <Skills />
+    <Education />
   </div>
 );
 

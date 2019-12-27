@@ -40,5 +40,21 @@
             "name": "Sprint",
             "percentage": 80
         }
+    ],
+    "education": [
+        {
+            "degree": "Master of Engineering",
+            "speciality": "Computer Science & Engineering",
+            "institute": "Anna University",
+            "location": "Chennai, India",
+            "graduated_year": 2011
+        },
+        {
+            "degree": "Bachelor of Engineering",
+            "speciality": "Computer Science & Engineering",
+            "institute": "Anna University",
+            "location": "Chennai, India",
+            "graduated_year": 2009
+        }
     ]
 }
