@@ -2,11 +2,11 @@
 
 ## Roadmap
 
-[] Jumbo
-[] About Me
-[] Education
-[] Experience
+[X] Jumbo
+[X] About Me
+[X] Education
+[X] Experience
 [] Projects
 [] Portfolio
-[] Stats Counter
-[] Social Media / Contact Me
+[X] Stats Counter
+[X] Social Media / Contact Me
