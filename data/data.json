@@ -56,5 +56,32 @@
             "location": "Chennai, India",
             "graduated_year": 2009
         }
-    ]
+    ],
+    "experience": [
+        {
+            "title": "Senior Engineer",
+            "company": "Acme Corporation",
+            "location": "Chennai, India",
+            "joining_year": 2017
+        },
+        {
+            "title": "Associate Engineer",
+            "company": "Microsoft",
+            "location": "Chennai, India",
+            "joining_year": 2013
+        },
+        {
+            "title": "Developer Intern",
+            "company": "Microsoft",
+            "location": "Chennai, India",
+            "joining_year": 2011
+        }
+    ],
+    "social": {
+        "facebook": "url",
+        "twitter": "url",
+        "linkedIn": "url",
+        "instagram": "url",
+        "email": "email@domain.com"
+    }
 }
