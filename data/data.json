@@ -78,10 +78,10 @@
         }
     ],
     "social": {
-        "facebook": "url",
-        "twitter": "url",
-        "linkedIn": "url",
-        "instagram": "url",
+        "facebook": "your_facebook_url",
+        "twitter": "your_twitter_url",
+        "linkedIn": "your_linkedin_url",
+        "instagram": "your_insta_url",
         "email": "email@domain.com"
     }
 }

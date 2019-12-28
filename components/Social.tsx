@@ -1,5 +1,6 @@
 import * as Icon from "react-feather";
 import data from "../data/data.json";
+import { type } from "os";
 
 const Button: React.FC<{ href: string }> = props => (
   <a
@@ -14,26 +15,51 @@ const Button: React.FC<{ href: string }> = props => (
   </a>
 );
 
-const Social: React.FC<{}> = props => (
-  <section className="bg-black text-white">
-    <div className="container mx-auto md:p-16 p-8 flex flex-wrap justify-center">
-      <Button href={data.social.email}>
-        <Icon.Mail />
-      </Button>
-      <Button href={data.social.facebook}>
-        <Icon.Facebook />
-      </Button>
-      <Button href={data.social.twitter}>
-        <Icon.Twitter />
-      </Button>
-      <Button href={data.social.linkedIn}>
-        <Icon.Linkedin />
-      </Button>
-      <Button href={data.social.instagram}>
-        <Icon.Instagram />
-      </Button>
-    </div>
-  </section>
-);
+type SocialData = {
+  facebook?: string;
+  twitter?: string;
+  email?: string;
+  linkedIn?: string;
+  instagram?: string;
+};
+
+const Social: React.FC<{}> = props => {
+  const social = data.social;
+  return (
+    <section className="bg-black text-white">
+      <div className="container mx-auto md:p-16 p-8 flex flex-wrap justify-center">
+        {social.email && (
+          <Button href={`mailto:${social.email}`}>
+            <Icon.Mail />
+          </Button>
+        )}
+
+        {social.facebook && (
+          <Button href={social.facebook}>
+            <Icon.Facebook />
+          </Button>
+        )}
+
+        {social.twitter && (
+          <Button href={social.twitter}>
+            <Icon.Twitter />
+          </Button>
+        )}
+
+        {social.linkedIn && (
+          <Button href={social.linkedIn}>
+            <Icon.Linkedin />
+          </Button>
+        )}
+
+        {social.instagram && (
+          <Button href={social.instagram}>
+            <Icon.Instagram />
+          </Button>
+        )}
+      </div>
+    </section>
+  );
+};
 
 export default Social;
